@@ -1,0 +1,103 @@
+<div class="main-content">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Columna de Noticias -->
+      <div class="col-lg-8">
+        <section class="news-section" aria-label="Noticias destacadas">
+          <div class="section-head d-flex justify-content-between align-items-center mb-3">
+            <h2 class="section-title mb-0">Noticias</h2>
+            <div class="controls">
+              <button class="ctrl-btn prev" aria-label="Anterior" onclick="this.closest('.news-section').querySelector('.cards').scrollBy({top: -400, behavior: 'smooth'})">↑</button>
+              <button class="ctrl-btn next" aria-label="Siguiente" onclick="this.closest('.news-section').querySelector('.cards').scrollBy({top: 400, behavior: 'smooth'})">↓</button>
+            </div>
+          </div>
+
+          <div class="cards" tabindex="0" role="group" aria-roledescription="carrusel" aria-label="Lista de noticias" aria-live="polite">
+            <article class="card" *ngFor="let item of newsItems">
+              <div class="card-media" [style.backgroundImage]="'url(' + item.imageUrl + ')'" role="img" [attr.aria-label]="item.title"></div>
+              <div class="card-body">
+                <div class="meta">
+                  <span class="date">{{item.dateLabel}}</span>
+                  <span class="category">{{item.category}}</span>
+                </div>
+                <h3 class="card-title">{{item.title}}</h3>
+                <p class="card-excerpt">{{item.excerpt}}</p>
+                <a href="#" class="card-action" aria-label="Seguir leyendo: {{item.title}}">Seguir leyendo</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Barra Lateral -->
+      <div class="col-lg-4">
+        <aside class="sidebar" aria-label="Servicios y enlaces municipales">
+          <!-- Directorio Telefónico -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">Directorio Telefónico</h3>
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="dept">Mesa Central</span>
+                <span class="phone">56 4322 16550</span>
+              </div>
+              <div class="contact-item">
+                <span class="dept">Oficina de Partes</span>
+                <span class="phone">56 4322 16551</span>
+              </div>
+              <div class="contact-item">
+                <span class="dept">Admin. Municipal</span>
+                <span class="phone">56 4322 16552</span>
+              </div>
+              <div class="contact-item">
+                <span class="dept">DIDECO</span>
+                <span class="phone">56 4322 16553</span>
+              </div>
+              <div class="contact-item">
+                <span class="dept">Finanzas Municipal</span>
+                <span class="phone">56 4322 16554</span>
+              </div>
+              <div class="contact-item">
+                <span class="dept">Obras Municipales</span>
+                <span class="phone">56 4322 16555</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Permiso de Circulación -->
+          <div class="sidebar-card">
+            <div class="permit-card">
+              <div class="permit-icon">🚗</div>
+              <h4 class="permit-title">Permiso de Circulación 2025</h4>
+              <p class="permit-text">Pague aquí su permiso de circulación</p>
+              <a href="#" class="permit-btn">PAGAR AQUÍ</a>
+            </div>
+          </div>
+
+          <!-- Transparencia -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">Transparencia</h3>
+            <div class="transparency-links">
+              <a href="#" class="transparency-link">
+                <i class="bi bi-info-circle"></i>
+                Solicitar Información Ley de Transparencia
+              </a>
+              <a href="#" class="transparency-link">
+                <i class="bi bi-file-text"></i>
+                Transparencia Activa Ley de Transparencia
+              </a>
+            </div>
+          </div>
+
+          <!-- Buscador -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">Buscar</h3>
+            <div class="search-box">
+              <input type="text" placeholder="Buscar..." class="search-input">
+              <button class="search-btn">Buscar</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
