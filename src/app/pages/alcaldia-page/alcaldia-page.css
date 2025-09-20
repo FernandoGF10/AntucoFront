@@ -1,0 +1,147 @@
+/* Estilos simples para la página de Alcaldía */
+.main-content {
+  padding: 40px 0;
+  background: url('/img/paisaje.jpg') no-repeat center/cover;
+  position: relative;
+  min-height: 80vh;
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.8);
+}
+
+.main-content .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card principal */
+.alcaldia-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+/* Header de la card */
+.card-header {
+  background: #0f172a;
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 3px solid #00cfff;
+}
+
+.municipal-crest {
+  flex-shrink: 0;
+}
+
+.crest-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.3);
+  object-fit: cover;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 4px 0;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Cuerpo de la card */
+.card-body {
+  padding: 40px;
+}
+
+.message-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.principal {
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 0;
+    min-height: 70vh;
+  }
+
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+    gap: 15px;
+  }
+
+  .crest-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .card-body {
+    padding: 25px 20px;
+  }
+
+  .message-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .greeting {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-header {
+    padding: 20px 15px;
+  }
+
+  .card-body {
+    padding: 20px 15px;
+  }
+
+  .message-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}

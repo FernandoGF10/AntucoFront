@@ -2,15 +2,16 @@
   padding: 20px 0;
   background: url('/img/paisaje.jpg') no-repeat center/cover;
   position: relative;
-  overflow: hidden;
 }
 
 .main-content::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.78), rgba(255,255,255,0.8));
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.8);
 }
 
 .main-content .container {
@@ -22,16 +23,13 @@
   background: #fff;
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   border: 1px solid #e5e7eb;
-  position: relative;
-  overflow: hidden;
 }
 
 .section-title {
   font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.2px;
 }
 
 .controls .ctrl-btn {
@@ -44,13 +42,12 @@
   line-height: 36px;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.2s ease;
 }
+
 .controls .ctrl-btn:hover,
 .controls .ctrl-btn:focus {
   background: #1f2937;
 }
-.controls .ctrl-btn:active { transform: scale(0.98); }
 
 .cards {
   display: grid;
@@ -58,35 +55,29 @@
   gap: 20px;
   max-height: 600px;
   overflow-y: auto;
-  overscroll-behavior: contain;
-  scroll-snap-type: y mandatory;
   padding: 0 8px 0 0;
-  background: transparent;
-  border-radius: 0;
   margin-top: 16px;
-  border: none;
 }
-.cards::-webkit-scrollbar { width: 8px; }
-.cards::-webkit-scrollbar-thumb { background: rgba(15,23,42,0.4); border-radius: 8px; }
+
+.cards::-webkit-scrollbar { 
+  width: 8px; 
+}
+
+.cards::-webkit-scrollbar-thumb { 
+  background: rgba(15,23,42,0.4); 
+  border-radius: 8px; 
+}
 
 .card {
   background: #fff;
   color: #111827;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   border: 1px solid #e5e7eb;
-  scroll-snap-align: start;
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-  border-color: #d1d5db;
 }
 
 .card-media {
@@ -95,47 +86,45 @@
   height: 220px;
 }
 
-.card-body { 
-  padding: 16px; 
+.card-body {
+  padding: 16px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 /* Badges */
-.meta { 
-  display: flex; 
-  gap: 8px; 
-  align-items: center; 
-  margin-bottom: 10px; 
+.meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
 }
-.meta .date { 
+.meta .date {
   background: #0f172a;
-  color: #fff; 
-  font-weight: 700; 
+  color: #fff;
+  font-weight: 700;
   font-size: 0.75rem;
-  letter-spacing: 0.5px;
   padding: 4px 8px;
   border-radius: 999px;
 }
-.meta .category { 
+.meta .category {
   background: #eef2ff;
-  color: #3730a3; 
-  font-size: 0.75rem; 
+  color: #3730a3;
+  font-size: 0.75rem;
   padding: 4px 8px;
   border-radius: 999px;
 }
 
-.card-title { 
-  font-size: 1.15rem; 
-  font-weight: 800; 
-  margin: 0 0 8px; 
-  line-height: 1.35;
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 0 0 8px;
 }
-.card-excerpt { 
-  color: #4b5563; 
-  font-size: 0.95rem; 
-  margin: 0 0 14px; 
+.card-excerpt {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin: 0 0 14px;
   flex: 1;
 }
 
@@ -146,21 +135,19 @@
   border-radius: 10px;
   padding: 10px 14px;
   text-decoration: none;
-  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
   font-weight: 700;
-  box-shadow: 0 0 0 0 rgba(0,0,0,0);
 }
+
 .card-action:hover,
-.card-action:focus { 
-  background: #d0f0ff; 
-  color: #0b1220; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.card-action:focus {
+  background: #d0f0ff;
+  color: #0b1220;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .cards { 
-    grid-template-columns: 1fr; 
+  .cards {
+    grid-template-columns: 1fr;
     max-height: 500px;
   }
   .card { min-height: 350px; }
@@ -230,7 +217,7 @@
 /* Permiso de Circulación */
 .permit-card {
   text-align: center;
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  background: #fef3c7;
   border-radius: 12px;
   padding: 20px;
   border: 2px solid #f59e0b;
@@ -261,7 +248,6 @@
   border-radius: 8px;
   text-decoration: none;
   font-weight: 700;
-  transition: background-color 0.25s ease;
 }
 
 .permit-btn:hover {
@@ -285,7 +271,6 @@
   padding: 12px;
   border-radius: 8px;
   border: 2px solid #f59e0b;
-  transition: background-color 0.25s ease;
 }
 
 .transparency-link:hover {
@@ -325,7 +310,6 @@
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.25s ease;
 }
 
 .search-btn:hover {
