@@ -1,0 +1,136 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 mt-3 mb-3">
+      <div class="card">
+        <h2 class="card-header">Atención al Vecino</h2>
+        <div class="card-body">
+          <form #miFormulario="ngForm" (ngSubmit)="mostrarDatos(miFormulario)">
+            <div class="row mb-3">
+              <div class="col-md-3">
+                <label for="campoRut" class="form-label">Rut</label>
+                <input type="text" class="form-control" id="campoRut" name="rut" required ngModel #rut="ngModel">
+                @if (rut.invalid && rut.touched) {
+                  <div class="text-danger">El rut es obligatorio</div>
+                }
+              </div>
+
+              <div class="col-3">
+                <label for="campoNombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="campoNombre" name="nombre" required ngModel #nombre="ngModel">
+                @if (nombre.invalid && nombre.touched) {
+                  <div class="text-danger">El nombre es obligatorio</div>
+                }
+              </div>
+
+              <div class="col-3">
+                <label for="campoApellido1" class="form-label">Primer Apellido</label>
+                <input type="text" class="form-control" id="campoApellido1" name="apellido1" required ngModel #apellido1="ngModel">
+                @if (apellido1.invalid && apellido1.touched) {
+                  <div class="text-danger">El primer apellido es obligatorio</div>
+                }
+              </div>
+
+              <div class="col-3">
+                <label for="campoApellido2" class="form-label">Segundo Apellido</label>
+                <input type="text" class="form-control" id="campoApellido2" name="apellido2" required ngModel #apellido2="ngModel">
+                @if (apellido2.invalid && apellido2.touched) {
+                  <div class="text-danger">El segundo apellido es obligatorio</div>
+                }
+              </div>
+            </div>
+
+            <!-- -->
+            <div class="row mb-3">
+              <div class="col-4">
+                <label for="campoTelefono">Teléfono</label>
+                <input type="text" class="form-control" id="campoTelefono" name="telefono" required ngModel #telefono="ngModel">
+                @if (telefono.invalid && telefono.touched) {
+                  <div class="text-danger">El teléfono es obligatorio</div>
+                }
+              </div>
+
+              <div class="col-4">
+                <label for="campoEmail">Email</label>
+                <input type="email" class="form-control" id="campoEmail" name="email" required ngModel #email="ngModel">
+                @if (email.invalid && email.touched) {
+                  <div class="text-danger">El email es obligatorio y debe tener formato válido</div>
+                }
+              </div>
+
+              <div class="col-4">
+                <label for="campoConfirmarEmail">Confirmar Email</label>
+                <input type="email" class="form-control" id="campoConfirmarEmail" name="confirmarEmail" required ngModel #confirmarEmail="ngModel">
+                @if (confirmarEmail.invalid && confirmarEmail.touched) {
+                  <div class="text-danger">Debe confirmar el email</div>
+                }
+                @if (email != confirmarEmail && confirmarEmail.touched) {
+                  <div class="text-danger">Email incorrecto</div>
+                }
+              </div>
+            </div>
+
+            <!-- -->
+            <div class="row mb-3">
+              <div class="col-4">
+                <label for="campoRequerimiento">Requerimiento</label>
+                <select id="campoRequerimiento" class="form-select" name="requerimiento" required [(ngModel)]="requerimiento" #requerimientoCtrl="ngModel">
+                  <option value="" disabled selected>Seleccione un Requerimiento</option>
+                  <option value="Información">Información</option>
+                  <option value="Reclamo">Reclamo</option>
+                  <option value="Sugerencia">Sugerencia</option>
+                  <option value="Felicitación">Felicitación</option>
+                  <option value="Solicitud">Solicitud</option>
+                  <option value="Denuncia">Denuncia</option>
+                </select>
+                @if (requerimientoCtrl.invalid && requerimientoCtrl.touched) {
+                  <div class="text-danger">Debe seleccionar un requerimiento</div>
+                }
+              </div>
+
+              <div class="col-4">
+                <label for="campoDireccion">Dirección de Residencia</label>
+                <input type="text" class="form-control" id="campoDireccion" placeholder="Dirección y numeración del lugar de residencia" name="direccion" required ngModel #direccion="ngModel">
+                @if (direccion.invalid && direccion.touched) {
+                  <div class="text-danger">La dirección es obligatoria</div>
+                }
+              </div>
+
+              <div class="col-4">
+                <label for="campoTipoResidencia">Casa/Depto/Oficina</label>
+                <select class="form-select" id="campoTipoResidencia" name="tipoResidencia" required [(ngModel)]="tipoResidencia" #tipoResidenciaCtrl="ngModel">
+                  <option value="" disabled selected>Seleccione tipo</option>
+                  <option value="Casa">Casa</option>
+                  <option value="Depto">Depto</option>
+                  <option value="Oficina">Oficina</option>
+                </select>
+                @if (tipoResidenciaCtrl.invalid && tipoResidenciaCtrl.touched) {
+                  <div class="text-danger">Debe seleccionar el tipo de residencia</div>
+                }
+              </div>
+            </div>
+
+            <!-- -->
+            <div class="row mb-3">
+              <div class="form-group">
+                <label for="campoDescripcion">Descripción del Requerimiento</label>
+                <textarea class="form-control" id="campoDescripcion" rows="3" name="descripcion" required ngModel #descripcion="ngModel"></textarea>
+                @if (descripcion.invalid && descripcion.touched) {
+                  <div class="text-danger">Debe ingresar una descripción</div>
+                }
+              </div>
+            </div>
+
+            <!-- -->
+            <div class="row">
+              <button type="submit" class="col-md-8 offset-md-2 btn btn-primary" [disabled]="miFormulario.invalid">
+                <i class="bi bi-floppy-fill mx-1"></i>Guardar
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
