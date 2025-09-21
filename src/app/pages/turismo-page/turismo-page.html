@@ -1,0 +1,27 @@
+<app-site-header></app-site-header>
+
+<div class="turismo-container">
+  <h1 class="title">Atractivos Turísticos de Antuco</h1>
+
+  <div class="cards-grid">
+    <div class="card" *ngFor="let atractivo of atractivos" (click)="abrirModal(atractivo)">
+      <img [src]="atractivo.imagen" alt="{{ atractivo.titulo }}" />
+      <div class="card-body">
+        <h2>{{ atractivo.titulo }}</h2>
+        <p>{{ atractivo.resumen }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" *ngIf="modalVisible" (click)="cerrarModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close-btn" (click)="cerrarModal()">&times;</span>
+    <h2>{{ modalData?.titulo }}</h2>
+    <img [src]="modalData?.imagen" alt="{{ modalData?.titulo }}" />
+    <p>{{ modalData?.descripcion }}</p>
+  </div>
+</div>
+
+<app-site-footer></app-site-footer>
