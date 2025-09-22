@@ -32,7 +32,7 @@
   font-weight: 700;
 }
 
-.controls .ctrl-btn {
+.controles .ctrl-btn {
   background: #0f172a;
   color: #fff;
   border: 0;
@@ -44,8 +44,8 @@
   cursor: pointer;
 }
 
-.controls .ctrl-btn:hover,
-.controls .ctrl-btn:focus {
+.controles .ctrl-btn:hover,
+.controles .ctrl-btn:focus {
   background: #1f2937;
 }
 
@@ -59,13 +59,13 @@
   margin-top: 16px;
 }
 
-.cards::-webkit-scrollbar { 
-  width: 8px; 
+.cards::-webkit-scrollbar {
+  width: 8px;
 }
 
-.cards::-webkit-scrollbar-thumb { 
-  background: rgba(15,23,42,0.4); 
-  border-radius: 8px; 
+.cards::-webkit-scrollbar-thumb {
+  background: rgba(15,23,42,0.4);
+  border-radius: 8px;
 }
 
 .card {
