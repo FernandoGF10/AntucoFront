@@ -139,11 +139,11 @@
     max-width: 220px;
     padding: 5px 10px;
   }
-  
+
   .search-input {
     font-size: 0.8rem;
   }
-  
+
   .search-icon {
     font-size: 0.9rem;
   }
@@ -155,4 +155,9 @@
     max-width: 180px;
     padding: 4px 8px;
   }
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
 }

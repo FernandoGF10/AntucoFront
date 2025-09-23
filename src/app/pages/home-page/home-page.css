@@ -32,23 +32,6 @@
   font-weight: 700;
 }
 
-.controles .ctrl-btn {
-  background: #0f172a;
-  color: #fff;
-  border: 0;
-  border-radius: 8px;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.controles .ctrl-btn:hover,
-.controles .ctrl-btn:focus {
-  background: #1f2937;
-}
-
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -93,7 +76,6 @@
   flex-direction: column;
 }
 
-/* Badges */
 .meta {
   display: flex;
   gap: 8px;

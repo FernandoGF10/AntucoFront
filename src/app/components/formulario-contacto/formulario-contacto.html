@@ -14,7 +14,7 @@
                 }
               </div>
 
-              <div class="col-3">
+              <div class="col-md-3">
                 <label for="campoNombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="campoNombre" name="nombre" required ngModel #nombre="ngModel">
                 @if (nombre.invalid && nombre.touched) {
@@ -22,7 +22,7 @@
                 }
               </div>
 
-              <div class="col-3">
+              <div class="col-md-3">
                 <label for="campoApellido1" class="form-label">Primer Apellido</label>
                 <input type="text" class="form-control" id="campoApellido1" name="apellido1" required ngModel #apellido1="ngModel">
                 @if (apellido1.invalid && apellido1.touched) {
@@ -30,7 +30,7 @@
                 }
               </div>
 
-              <div class="col-3">
+              <div class="col-md-3">
                 <label for="campoApellido2" class="form-label">Segundo Apellido</label>
                 <input type="text" class="form-control" id="campoApellido2" name="apellido2" required ngModel #apellido2="ngModel">
                 @if (apellido2.invalid && apellido2.touched) {
@@ -41,7 +41,7 @@
 
             <!-- -->
             <div class="row mb-3">
-              <div class="col-4">
+              <div class="col-md-4">
                 <label for="campoTelefono">Teléfono</label>
                 <input type="text" class="form-control" id="campoTelefono" name="telefono" required ngModel #telefono="ngModel">
                 @if (telefono.invalid && telefono.touched) {
@@ -49,7 +49,7 @@
                 }
               </div>
 
-              <div class="col-4">
+              <div class="col-md-4">
                 <label for="campoEmail">Email</label>
                 <input type="email" class="form-control" id="campoEmail" name="email" required ngModel #email="ngModel">
                 @if (email.invalid && email.touched) {
@@ -57,7 +57,7 @@
                 }
               </div>
 
-              <div class="col-4">
+              <div class="col-md-4">
                 <label for="campoConfirmarEmail">Confirmar Email</label>
                 <input type="email" class="form-control" id="campoConfirmarEmail" name="confirmarEmail" required ngModel #confirmarEmail="ngModel">
                 @if (confirmarEmail.invalid && confirmarEmail.touched) {
@@ -71,7 +71,7 @@
 
             <!-- -->
             <div class="row mb-3">
-              <div class="col-4">
+              <div class="col-md-4">
                 <label for="campoRequerimiento">Requerimiento</label>
                 <select id="campoRequerimiento" class="form-select" name="requerimiento" required [(ngModel)]="requerimiento" #requerimientoCtrl="ngModel">
                   <option value="" disabled selected>Seleccione un Requerimiento</option>
@@ -87,7 +87,7 @@
                 }
               </div>
 
-              <div class="col-4">
+              <div class="col-md-4">
                 <label for="campoDireccion">Dirección de Residencia</label>
                 <input type="text" class="form-control" id="campoDireccion" placeholder="Dirección y numeración del lugar de residencia" name="direccion" required ngModel #direccion="ngModel">
                 @if (direccion.invalid && direccion.touched) {
@@ -95,7 +95,7 @@
                 }
               </div>
 
-              <div class="col-4">
+              <div class="col-md-4">
                 <label for="campoTipoResidencia">Casa/Depto/Oficina</label>
                 <select class="form-select" id="campoTipoResidencia" name="tipoResidencia" required [(ngModel)]="tipoResidencia" #tipoResidenciaCtrl="ngModel">
                   <option value="" disabled selected>Seleccione tipo</option>
