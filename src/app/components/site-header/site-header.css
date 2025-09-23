@@ -42,15 +42,6 @@
   background-color: rgba(255,255,255,0.08);
 }
 
-.navbar-nav .nav-link:focus-visible {
-  outline: 2px solid #00cfff;
-  outline-offset: 2px;
-}
-
-.navbar-nav .nav-link.active {
-  border-bottom: 2px solid #00cfff;
-}
-
 .social-icons a {
   color: white;
   font-size: 1.4rem;

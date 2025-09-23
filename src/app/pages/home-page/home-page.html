@@ -10,7 +10,7 @@
             <h2 class="section-title mb-0">Noticias</h2>
           </div>
 
-          <div class="cards" tabindex="0" role="group" aria-roledescription="carrusel" aria-label="Lista de noticias" aria-live="polite">
+          <div class="cards">
             <article class="card" *ngFor="let item of newsItems">
               <div class="card-media" [style.backgroundImage]="'url(' + item.imageUrl + ')'" role="img" [attr.aria-label]="item.title"></div>
               <div class="card-body">
