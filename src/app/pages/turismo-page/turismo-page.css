@@ -9,18 +9,18 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.8); 
+  background: rgba(255,255,255,0.8);
 }
 
 .turismo-container .cards-grid,
 .turismo-container .title {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 40px;
   text-align: center;
-  color: #004085; 
+  color: #004085;
 }
 
 .title {
@@ -45,6 +45,7 @@
 
 .card:hover {
   transform: translateY(-6px);
+  cursor: pointer;
 }
 
 .card img {
